@@ -97,6 +97,7 @@ func (s *TestCleanupOrder) TestCaseA() {
 			})
 			fmt.Println("Run Sub-Sub-TestCase A")
 			tearDownSubTest = append(tearDownSubTest, "Sub-Sub-TestCase A")
+			fmt.Println("Finish Sub-Sub-TestCase A")
 		})
 		s.Run("Sub-Sub-TestCase B", func() {
 			s.T().Cleanup(func() {
@@ -104,8 +105,12 @@ func (s *TestCleanupOrder) TestCaseA() {
 			})
 			fmt.Println("Run Sub-Sub-TestCase B")
 			tearDownSubTest = append(tearDownSubTest, "Sub-Sub-TestCase B")
+			fmt.Println("Finish Sub-Sub-TestCase B")
 		})
+
+		fmt.Println("Finish Sub-TestCase A")
 	})
+	fmt.Println("Finish TestCase A")
 }
 
 // Entry point of the whole test suite
