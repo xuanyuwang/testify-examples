@@ -1,0 +1,8 @@
+with-expecter: true
+packages:
+  github.com/xuanyuwang/testify-examples/mock-and-subtest:
+    interfaces:
+      ExternalService:
+        config:
+          dir: .
+          outpkg: "{{.PackageName}}" 
